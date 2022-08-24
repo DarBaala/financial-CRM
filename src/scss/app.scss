@@ -1,2 +1,11 @@
 @import "./libs/normalize";
 @import "./components/all";
+body {
+  font-family: "Anek Telugu", sans-serif;
+  background-color: #fdf6f6;
+}
+
+.container {
+  max-width: 1380px;
+  margin: auto;
+}
