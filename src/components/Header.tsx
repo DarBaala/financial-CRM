@@ -5,9 +5,8 @@ const Header = () => {
   const [burger, setBurger] = useState(false);
 
   const handleMenu = () => {
-    burger ? setBurger(false) : setBurger(true);
+    setBurger(!burger);
   };
-  console.log(burger);
 
   return (
     <header className="header">
@@ -31,9 +30,14 @@ const Header = () => {
           <div className="header__select"></div>
         </div>
       </div>
-      <div className="header__menu">
+      <div
+        onClick={handleMenu}
+        className={burger ? "header__menu" : "header__menu--hidden"}
+      >
         <ul className="header__list">
-          <li className="header__item">Счет</li>
+          <Link to={"/balance"}>
+            <li className="header__item">Счет</li>
+          </Link>
           <li className="header__item">История</li>
           <li className="header__item">Планирования</li>
           <li className="header__item">Новая запись</li>
